@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(title: "Contador de pessoas",
-    home: Home()));
+    MaterialApp(
+      title: "Contador de pessoas",
+      home: Home()
+    ),
+  );
 }
 
 class Home extends StatefulWidget {
@@ -13,20 +16,20 @@ class Home extends StatefulWidget {
 
 class HomeState extends State<Home> {
   int _people = 0;
-  String _mensage = "Pode entrar";
+  String _message = "Pode entrar";
   void _changePeople(int delta) {
     setState(() {
       _people += delta;
       if(_people >= 20){
-        _mensage = "Lotado, não pode entrar";
+        _message = "Lotado";
         _people = 20;
       } 
       else if(_people < 0){
-        _mensage = "Pode entrar";
+        _message = "Pode entrar";
         _people = 0;
       } 
       else{
-        _mensage = "Pode entrar";
+        _message = "Pode entrar";
       }
       
     });
@@ -46,7 +49,7 @@ class HomeState extends State<Home> {
             Text(
               "Pessoas: $_people",
               style: const TextStyle(
-                color: Colors.white,
+                color: Colors.yellow,
                 fontWeight: FontWeight.bold), 
               ),
               Row(
@@ -58,7 +61,7 @@ class HomeState extends State<Home> {
                       child: const Text(
                         "+1",
                         style: TextStyle(fontSize: 40.0,
-                        color: Colors.white),
+                        color: Colors.yellow),
                       ),
                       onPressed: () {
                         _changePeople(1);
@@ -71,7 +74,7 @@ class HomeState extends State<Home> {
                       child: const Text(
                         "-1",
                         style: TextStyle(fontSize: 40.0,
-                        color: Colors.white),
+                        color: Colors.yellow),
                       ),
                       onPressed: () {
                         _changePeople(-1);
@@ -81,9 +84,9 @@ class HomeState extends State<Home> {
                 ],
               ),
               Text(
-              _mensage,
+              _message,
               style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.yellow,
                   fontStyle: FontStyle.italic,
                   fontSize: 30),
             ) 
