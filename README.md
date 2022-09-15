@@ -1,4 +1,4 @@
-# hello_world
+# People-Counter
 
 A new Flutter project.
 
